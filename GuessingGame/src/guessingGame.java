@@ -13,35 +13,43 @@ import java.util.InputMismatchException;
 
 public class guessingGame {
 	public static void main(String[] args) {
+		//Introduction, asks for name and greets
 		Scanner input = new Scanner(System.in);
 		System.out.println("What is your name?");
 		String name = input.nextLine();
 		System.out.println("Ice to meet you " + name);
+		
+		//Generate random number from 1 to 10 to be guessed
 		int answer = (int) ((Math.random() * 10) + 1);
-		boolean isNumber = false;
+		//Number of guesses
 		int counter = 0;
 		
+		boolean isNumber = false; //True if the scanner reads a number, otherwise false
 		while (!isNumber) {
+			//Breaks when a number is read
 			counter++;
-		try {
-			System.out.println("Guess a number");
-			int guess = input.nextInt();
-			if (guess == answer) {
-				isNumber = true;
-				System.out.println("Congratulations! " + name + " it took you " + counter + " tries");
+			try {
+				System.out.println("Guess a number");
+				int guess = input.nextInt();
+				
+				//Test cases for matching the guess to the actual number
+				if (guess == answer) {
+					isNumber = true;
+					System.out.println("Congratulations! " + name + " it took you " + counter + " tries");
+				}
+				else if (guess > answer) {
+					System.out.println("Guess is too large");
+				}
+				else if (guess < answer) {
+					System.out.println("Guess is too small");
+				}
 			}
-			else if (guess > answer) {
-				System.out.println("Guess is too large");
-			}
-			else if (guess < answer) {
-				System.out.println("Guess is too small");
+			
+			catch(InputMismatchException e) {
+				System.out.println("Please enter a number");
+				input.next();
 			}
 		}
-		
-		catch(InputMismatchException e) {
-			System.out.println("Please enter a number");
-			input.next();
-		}
-		}
+		input.close();
 	}
 }
