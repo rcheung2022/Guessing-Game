@@ -3,8 +3,9 @@
 * A guessing game that prompts the user to guess a random number between 1 and 10.
 * <p>
 * @author  Raymond Cheung
-* @since   2017-09-26
+* @since   2017-09-26 
 */
+
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
