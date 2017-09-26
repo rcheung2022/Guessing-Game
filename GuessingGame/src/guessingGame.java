@@ -1,24 +1,20 @@
+/*
+* <h1> Guessing Game </h1>
+* A guessing game that prompts the user to guess a random number between 1 and 10.
+* <p>
+* @author  Raymond Cheung
+* @since   2017-09-26
+*/
+
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class guessingGame {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		System.out.println("What is your name?");
 		String name = input.nextLine();
 		System.out.println("Ice to meet you " + name);
-		/*
-		System.out.println("How old are you?");
-		int age = input.nextInt();
-		if (age < 18) {
-			System.out.println(name + ",you're young");
-		}
-		else {
-			System.out.println(name + ",you're old");
-		}
-		*/
 		int answer = (int) ((Math.random() * 10) + 1);
 		boolean isNumber = false;
 		int counter = 0;
@@ -42,7 +38,8 @@ public class guessingGame {
 		
 		catch(InputMismatchException e) {
 			System.out.println("Please enter a number");
+			input.next();
+		}
 		}
 	}
-}
 }
