@@ -19,7 +19,11 @@ public class guessingGame {
 		String name = input.nextLine();
 		System.out.println("Ice to meet you " + name);
 		
+<<<<<<< HEAD
 		//Generate random number from 1 to 10 to be guessed (3)
+=======
+		//Generate random number from 1 to 10 to be guessed (2)
+>>>>>>> branch 'master' of https://github.com/rcheung2022/Guessing-Game
 		int answer = (int) ((Math.random() * 10) + 1);
 		//Number of guesses
 		int counter = 0;
